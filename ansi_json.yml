@@ -11,8 +11,6 @@
     #x_last_name: "Mattila"
     #x_email: "jaakko.mattila@xxx.test"
 
-    entry_state: "present"
-     # You can choose present or absent with extra_variable to add/remove entries
 
   tasks:
 
@@ -20,7 +18,6 @@
       blockinfile:
         path: ./data1.json
         insertafter: "employees"
-        state: "{{ entry_state }}"
         marker: ""
         content: |
          '{'
@@ -30,8 +27,7 @@
           '"email": "{{ x_email }}"'
           '},'
 
-
-    - name: Remove extra chars
+    - name: Remove extra chars to create usable json
       replace:
         path: ./data1.json
         regexp: "[`']"
