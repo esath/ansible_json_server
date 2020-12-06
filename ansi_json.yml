@@ -6,6 +6,7 @@
   gather_facts: false  
 
   vars:
+    # Optional default data
     x_id: "100"
     x_name: "Jaakko"
     x_last_name: "Mattila"
@@ -26,8 +27,7 @@
           '"email": "{{ x_email }}"'
           '},'
 
-
-    - name: Remove extra chars
+    - name: Remove extra chars to create usable json
       replace:
         path: ./data1.json
         regexp: "[`']"
