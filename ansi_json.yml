@@ -1,0 +1,34 @@
+---
+
+- name: Write json-data to file
+  hosts: localhost
+  connection: local
+  gather_facts: false  
+
+  vars:
+    x_id: "100"
+    x_name: "Jaakko"
+    x_last_name: "Mattila"
+    x_email: "jaakko.mattila@xxx.test"
+
+  tasks:
+
+    - name: Add json to file
+      blockinfile:
+        path: ./data1.json
+        insertafter: "employees"
+        marker: ""
+        content: |
+         '{'
+          '"id": {{ x_id }},'
+          '"first_name": "{{ x_name }}",'
+          '"last_name": "{{ x_last_name }}",'
+          '"email": "{{ x_email }}"'
+          '},'
+
+
+    - name: Remove extra chars
+      replace:
+        path: ./data1.json
+        regexp: "[`']"
+        replace: ""

@@ -1,0 +1,32 @@
+{
+  "employees": [
+
+{
+ "id": 100,
+ "first_name": "Jaakko",
+ "last_name": "Mattila",
+ "email": "jaakko.mattila@xxx.test"
+ },
+
+{
+ "id": 101,
+ "first_name": "Masa",
+ "last_name": "Savolainen",
+ "email": "masa.sav@test.net"
+ },
+
+{
+ "id": 101,
+ "first_name": "Sirpa",
+ "last_name": "Korhonen",
+ "email": "sirpa.korhonen@test.net"
+ },
+
+ {
+  "id": 9999,
+  "first_name": "System",
+  "last_name": "Admin",
+  "email": "dont.remove@admin.entry"
+ }
+]
+}
