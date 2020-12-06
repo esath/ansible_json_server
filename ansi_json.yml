@@ -6,10 +6,13 @@
   gather_facts: false  
 
   vars:
-    x_id: "100"
-    x_name: "Jaakko"
-    x_last_name: "Mattila"
-    x_email: "jaakko.mattila@xxx.test"
+    #x_id: "100"
+    #x_name: "Jaakko"
+    #x_last_name: "Mattila"
+    #x_email: "jaakko.mattila@xxx.test"
+
+    entry_state: "present"
+     # You can choose present or absent with extra_variable to add/remove entries
 
   tasks:
 
@@ -17,6 +20,7 @@
       blockinfile:
         path: ./data1.json
         insertafter: "employees"
+        state: "{{ entry_state }}"
         marker: ""
         content: |
          '{'
