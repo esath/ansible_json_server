@@ -20,3 +20,6 @@ Update json-file with Ansible:
 Check json-data:
   http://localhost:3000/employees
 
+NOTES:
+JSON-Server data can be modified using API-messages and you don't have to edit json-file this way.
+API-calls will be added to this Ansible-playbook.
